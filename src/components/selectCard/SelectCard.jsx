@@ -7,11 +7,10 @@ const SelectCard = ({ cards }) => {
 
     return (
         <div>
-            <h1 className='text-3xl font-bold w-10/12 mx-auto'>Your Cards</h1>
 
             {cards.length === 0 ? (
            
-                <div>
+                <div className='py-10'>
                     <p className="text-center text-2xl text-gray-500 mt-6">
                         No cards selected
                     </p>
@@ -21,6 +20,7 @@ const SelectCard = ({ cards }) => {
                 </div>
             ) : (
                 <>
+                <h1 className='text-3xl font-bold w-10/12 mx-auto'>Your Cards</h1>
                     {
                         cards.map(card => (
                             <SubsCard key={card.id} card={card} />
@@ -32,7 +32,7 @@ const SelectCard = ({ cards }) => {
                         <div>${totalPrice}</div>
                     </div>
 
-                    <button className="w-10/12 mx-auto block mt-4 bg-blue-500 hover:bg-red-500 text-white py-2 rounded-xl ">
+                    <button className="w-10/12 mx-auto block mt-4 bg-blue-500 hover:bg-red-500 text-white py-2 rounded-xl my-10 ">
                         Purchase Now
                     </button>
                 </>

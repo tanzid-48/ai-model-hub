@@ -6,6 +6,7 @@ import Models from './components/models/Models'
 import Navbar from './components/navbar/Navbar'
 import Tab from './components/tab/Tab'
 import SelectCard from './components/selectCard/SelectCard'
+import Footer from './components/footer/Footer'
 
 const getModels = async() =>{
   const res = await fetch("/models.json")
@@ -38,7 +39,7 @@ function App() {
      </main>
      
      <footer>
-
+     <Footer></Footer>
      </footer>
      
     </>
