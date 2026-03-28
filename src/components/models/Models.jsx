@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import Card from '../../ui/Card';
 
-const Models = ({modelPromise}) => {
+const Models = ({modelPromise, cards,SetCards}) => {
     const models = use(modelPromise);
     return (
         <div className='py-10 '>
@@ -12,7 +12,7 @@ const Models = ({modelPromise}) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 w-9/12 mx-auto">
                 {
-                  models.map(model => ( <Card key={model.id} model={model}></Card>
+                  models.map(model => ( <Card key={model.id} model={model} cards = {cards} SetCards = {SetCards}  ></Card>
                   ))
                 }
             </div>

@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 
-const Card = ({model}) => {
+const Card = ({model,cards,SetCards}) => {
   const [isSubscribed,setIsSubscribed] = useState(false)
 
 
    const  handleSubscribed =()=>{
     setIsSubscribed(true)
+    SetCards([...cards,model])
 
 
    }

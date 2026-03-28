@@ -1,9 +1,11 @@
 
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/banner/Banner'
 import Models from './components/models/Models'
 import Navbar from './components/navbar/Navbar'
+import Tab from './components/tab/Tab'
+import SelectCard from './components/selectCard/SelectCard'
 
 const getModels = async() =>{
   const res = await fetch("/models.json")
@@ -12,6 +14,10 @@ const getModels = async() =>{
 const modelPromise = getModels();
 
 function App() {
+
+ const [isActive,setIsActive] = useState("Models")
+ const [cards,SetCards] = useState([])
+
   return (
     <>
      <nav>
@@ -19,10 +25,14 @@ function App() {
      </nav>
      <main>
       <Banner></Banner>
+
+      <Tab setIsActive={setIsActive} ></Tab>
       
-     <Suspense fallback = {<span className="loading loading-ring loading-xl"></span>}>
-      <Models modelPromise = {modelPromise} ></Models>
-     </Suspense>
+     {isActive === "Models" && <Suspense fallback = {<span className="loading loading-ring loading-xl"></span>}>
+      <Models modelPromise = {modelPromise} cards = {cards} SetCards = {SetCards} ></Models>
+     </Suspense>}
+
+      {isActive === "Card" && <SelectCard cards = {cards} ></SelectCard>}
       
 
      </main>
