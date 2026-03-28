@@ -1,18 +1,23 @@
 
 import './App.css'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
  
 
   return (
     <>
+     <nav>
+      <Navbar></Navbar>
+     </nav>
+     <main>
+
+     </main>
      
+     <footer>
 
-     <h2 className='text-4xl'>Hello</h2>
-
-      
-
-      
+     </footer>
+     
     </>
   )
 }
