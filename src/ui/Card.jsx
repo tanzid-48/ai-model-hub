@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 
 const Card = ({model,cards,SetCards}) => {
@@ -8,6 +9,7 @@ const Card = ({model,cards,SetCards}) => {
    const  handleSubscribed =()=>{
     setIsSubscribed(true)
     SetCards([...cards,model])
+    toast.success(`${model.title} added to card`)
 
 
    }

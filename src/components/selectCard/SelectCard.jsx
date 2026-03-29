@@ -1,10 +1,12 @@
 import React from 'react';
 import SubsCard from '../../ui/SubsCard';
+import { toast } from 'react-toastify';
 
 const SelectCard = ({ cards, SetCards}) => {
 
     const handlePayment = () => {
         SetCards([])
+        toast.success("Payment SuccessFull");
     }
     const totalPrice = cards.reduce((sum, card) => sum + card.price, 0);
 

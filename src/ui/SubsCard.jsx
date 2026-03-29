@@ -1,5 +1,6 @@
 import React from 'react';
 import { CircleX } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 
 
@@ -8,6 +9,7 @@ const SubsCard = ({ card , cards, SetCards }) => {
     const handleRemoved = (card) => {
         const filterData = cards.filter(c => c.id !== card.id);
         SetCards (filterData);
+        toast.warning(`${card.title} has removed`);
     }
 
 
