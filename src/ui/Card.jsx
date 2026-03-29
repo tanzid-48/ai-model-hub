@@ -8,9 +8,15 @@ const Card = ({model,cards,SetCards}) => {
 
    const  handleSubscribed =()=>{
     setIsSubscribed(true)
+
+    const isFound = cards.find(item => item.id ===model.id)
+    if(isFound){
+      toast.error(`${model.title} all ready Added`)
+      return;
+    }
+
     SetCards([...cards,model])
     toast.success(`${model.title} added to card`)
-
 
    }
 
