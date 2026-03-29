@@ -12,8 +12,6 @@ const SubsCard = ({ card , cards, SetCards }) => {
         toast.warning(`${card.title} has removed`);
     }
 
-
-
     return (
 
            <div className="border p-3 rounded-xl shadow mt-4 w-10/12 mx-auto">
