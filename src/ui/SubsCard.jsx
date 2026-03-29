@@ -1,6 +1,17 @@
 import React from 'react';
+import { CircleX } from 'lucide-react';
 
-const SubsCard = ({ card }) => {
+
+
+const SubsCard = ({ card , cards, SetCards }) => {
+  
+    const handleRemoved = (card) => {
+        const filterData = cards.filter(c => c.id !== card.id);
+        SetCards (filterData);
+    }
+
+
+
     return (
 
            <div className="border p-3 rounded-xl shadow mt-4 w-10/12 mx-auto">
@@ -17,9 +28,12 @@ const SubsCard = ({ card }) => {
                     </h2>
                 </div>
 
-                <div className="text-xl font-bold">
+               <div className="flex gap-3 items-center">
+                 <div className="text-xl font-bold">
                     ${card.price}/month
                 </div>
+                <button onClick={()=> handleRemoved(card)} className=''>  <CircleX /> </button>
+               </div>
             </div>
         </div>
 

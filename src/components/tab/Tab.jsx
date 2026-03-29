@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tab = ({ setIsActive }) => {
+const Tab = ({ setIsActive ,cards}) => {
     return (
         <div className=''>
             {/* name of each tab group should be unique */}
@@ -9,7 +9,7 @@ const Tab = ({ setIsActive }) => {
                     onClick={() => setIsActive("Models")}
                     defaultChecked />
 
-                <input type="radio" name="my_tabs_1" className="tab rounded-full w-40" aria-label="Card"
+                <input type="radio" name="my_tabs_1" className="tab rounded-full w-40" aria-label={`Card (${cards.length})`}
                 onClick={() => setIsActive("Card")} 
                 />
 

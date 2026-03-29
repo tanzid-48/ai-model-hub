@@ -1,8 +1,11 @@
 import React from 'react';
 import SubsCard from '../../ui/SubsCard';
 
-const SelectCard = ({ cards }) => {
+const SelectCard = ({ cards, SetCards}) => {
 
+    const handlePayment = () => {
+        SetCards([])
+    }
     const totalPrice = cards.reduce((sum, card) => sum + card.price, 0);
 
     return (
@@ -23,7 +26,7 @@ const SelectCard = ({ cards }) => {
                 <h1 className='text-3xl font-bold w-10/12 mx-auto'>Your Cards</h1>
                     {
                         cards.map(card => (
-                            <SubsCard key={card.id} card={card} />
+                            <SubsCard key={card.id} card={card}  cards = {cards} SetCards = {SetCards}/>
                         ))
                     }
 
@@ -32,8 +35,8 @@ const SelectCard = ({ cards }) => {
                         <div>${totalPrice}</div>
                     </div>
 
-                    <button className="w-10/12 mx-auto block mt-4 bg-blue-500 hover:bg-red-500 text-white py-2 rounded-xl my-10 ">
-                        Purchase Now
+                    <button onClick={handlePayment} className="w-10/12 mx-auto block mt-4 bg-blue-500 hover:bg-red-500 text-white py-2 rounded-xl my-10 ">
+                        Proceed To Checkout
                     </button>
                 </>
             )}

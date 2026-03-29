@@ -27,13 +27,13 @@ function App() {
      <main>
       <Banner></Banner>
 
-      <Tab setIsActive={setIsActive} ></Tab>
+      <Tab setIsActive={setIsActive}  cards = {cards}></Tab>
       
      {isActive === "Models" && <Suspense fallback = {<span className="loading loading-ring loading-xl"></span>}>
       <Models modelPromise = {modelPromise} cards = {cards} SetCards = {SetCards} ></Models>
      </Suspense>}
 
-      {isActive === "Card" && <SelectCard cards = {cards} ></SelectCard>}
+      {isActive === "Card" && <SelectCard cards = {cards} SetCards = {SetCards} ></SelectCard>}
       
 
      </main>
